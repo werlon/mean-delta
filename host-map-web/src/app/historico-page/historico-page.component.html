@@ -19,24 +19,28 @@
             <span>Hora:</span>
         </div>
     </div>
-    <div class="row" *ngFor="let loc of historico">
-        <div class="col-md-2">
-            <span>{{loc.dominio}}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{loc.query}}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{loc.lat}}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{loc.lon}}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{loc.dataHora}}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{loc.dataHora}}</span>
+    <div class="row">
+        <div *ngFor="let loc of historico; let i = index;">
+            <div class="row">
+                <div class="col-md-2">
+                    <span>{{loc.dominio}}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{loc.query}}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{loc.lat}}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{loc.lon}}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{loc.dataHora}}</span>
+                </div>
+                <div class="col-md-2">
+                    <span>{{loc.dataHora}}</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
