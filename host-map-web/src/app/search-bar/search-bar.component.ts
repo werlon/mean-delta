@@ -1,5 +1,6 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {HttpClientService} from "../http-client.service";
+import {Localizacao} from "../model/localizacao.model";
 
 @Component({
     selector: 'fd-search-bar',
@@ -11,7 +12,7 @@ export class SearchBarComponent implements OnInit {
     dominio: String;
 
     @Output()
-    localizacao: EventEmitter<any> = new EventEmitter<any>();
+    localizacao: EventEmitter<Localizacao> = new EventEmitter<Localizacao>();
 
     constructor(private httpClient: HttpClientService) {
     }

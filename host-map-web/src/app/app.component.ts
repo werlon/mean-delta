@@ -7,12 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    localizacao: any = new Object();
-
-    constructor() {
-    }
-
-    exibirLocalizacao(localizacao): void {
-        this.localizacao = localizacao;
-    }
 }
