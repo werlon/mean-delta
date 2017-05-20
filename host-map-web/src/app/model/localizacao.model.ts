@@ -4,5 +4,7 @@ export class Localizacao {
                 public lon?: Number,
                 public org?: String,
                 public query?: String,
-                public country?: String) {}
+                public dataHora?: String,
+                public country?: String,
+                public dominio?: String) {}
 }
