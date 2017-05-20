@@ -1,20 +1,35 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {SearchBarComponent} from './search-bar/search-bar.component';
+import {HttpClientService} from "./http-client.service";
+import {HostPanelComponent} from './host-panel/host-panel.component';
+import {AgmCoreModule} from "@agm/core";
+import {environment} from "../environments/environment";
+import { MapContainerComponent } from './map-container/map-container.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        SearchBarComponent,
+        HostPanelComponent,
+        MapContainerComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.googleApiKey
+        })
+    ],
+    providers: [
+        HttpClientService
+    ],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
