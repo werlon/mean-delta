@@ -24,7 +24,11 @@ export class SearchBarComponent implements OnInit {
         this.httpClient
             .get('http://ip-api.com/json/' + this.dominio)
             .subscribe(
-                (data) => this.localizacao.emit(data),
+                (data) => {
+                    data.dominio = this.dominio;
+
+                    this.localizacao.emit(data);
+                },
                 (error) => console.error(error)
             );
     }
